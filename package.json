@@ -1,0 +1,28 @@
+{
+  "name": "ferentreperros",
+  "version": "1.0.0",
+  "description": "Sitio web profesional de bienestar y etología canina",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisolcay/ferentreperros.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisolcay/ferentreperros/issues"
+  },
+  "homepage": "https://github.com/luisolcay/ferentreperros#readme",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4"
+  }
+}

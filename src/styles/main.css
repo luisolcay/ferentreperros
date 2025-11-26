@@ -1,0 +1,63 @@
+/* ============================================
+   Main Styles - Ferentreperros
+   ============================================ */
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Blob Gradient */
+.blob-gradient {
+    background: radial-gradient(circle, rgba(236,72,153,0.15) 0%, rgba(139,92,246,0.15) 50%, rgba(255,255,255,0) 70%);
+}
+
+/* Orbit Ring Styles */
+.orbit-ring {
+    border: 2px solid rgba(15, 23, 42, 0.25);
+    box-shadow:
+        0 0 35px rgba(15, 23, 42, 0.15),
+        inset 0 0 25px rgba(148, 163, 184, 0.2);
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Orbit Animations */
+@keyframes orbit-spin {
+    from { 
+        transform: translate(-50%, -50%) rotate(0deg); 
+    }
+    to { 
+        transform: translate(-50%, -50%) rotate(360deg); 
+    }
+}
+
+@keyframes orbit-spin-reverse {
+    from { 
+        transform: translate(-50%, -50%) rotate(360deg); 
+    }
+    to { 
+        transform: translate(-50%, -50%) rotate(0deg); 
+    }
+}
+
+.animate-orbit { 
+    animation: orbit-spin 60s linear infinite; 
+}
+
+.animate-orbit-reverse { 
+    animation: orbit-spin-reverse 45s linear infinite; 
+}
+
+.animate-orbit-fast { 
+    animation: orbit-spin 30s linear infinite; 
+}
+

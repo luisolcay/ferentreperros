@@ -1,0 +1,47 @@
+/* ============================================
+   Component Styles - Buttons, Cards, etc.
+   ============================================ */
+
+/* Shiny CTA Button */
+@property --gradient-angle { 
+    syntax: "<angle>"; 
+    initial-value: 0deg; 
+    inherits: false; 
+}
+
+.shiny-cta-custom {
+    --gradient-angle: 0deg;
+    /* Inner gradient: Pink-400 to Purple-500. Outer border: Spinning conic gradient */
+    background: linear-gradient(135deg, #f472b6, #a855f7) padding-box,
+                conic-gradient(from var(--gradient-angle), transparent 0%, #ffffff 10%, #fbcfe8 20%, #ffffff 30%, transparent 40%, transparent 100%) border-box;
+    border: 2px solid transparent;
+    animation: border-spin 3s linear infinite;
+}
+
+@keyframes border-spin { 
+    to { 
+        --gradient-angle: 360deg; 
+    } 
+}
+
+/* Shimmer effect */
+.shiny-cta-custom::after {
+    content: ''; 
+    position: absolute; 
+    inset: 0; 
+    z-index: 1;
+    background: linear-gradient(-50deg, transparent, rgba(255,255,255,0.25), transparent);
+    mask-image: linear-gradient(to right, transparent, black, transparent);
+    transform: translate(-100%, -100%) rotate(0deg);
+    animation: shimmer 5s infinite;
+}
+
+@keyframes shimmer { 
+    0% { 
+        transform: translateX(-150%) skewX(-15deg); 
+    }
+    100% { 
+        transform: translateX(150%) skewX(-15deg); 
+    } 
+}
+
