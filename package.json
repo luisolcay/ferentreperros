@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "prestart": "npm run build",
     "preview": "vite preview",
-    "start": "npm run preview -- --host 0.0.0.0 --port ${PORT:-8080}"
+    "start": "node scripts/start-preview.cjs"
   },
   "repository": {
     "type": "git",

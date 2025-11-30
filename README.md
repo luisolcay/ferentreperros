@@ -14,6 +14,7 @@ Sitio web profesional para el servicio de etología y bienestar canino **@Ferent
 npm run dev      # Servidor de desarrollo
 npm run build    # Compilación a producción
 npm run preview  # Previsualización del build
+npm start        # (Re)compila y sirve el build con scripts/start-preview.cjs
 ```
 
 ## Estructura
@@ -37,5 +38,6 @@ npm run preview  # Previsualización del build
 
 ## Producción
 
-Ejecuta `npm run build`; el resultado se genera en la carpeta `dist` listo para desplegar.
+1. Ejecuta `npm run build`; el resultado se genera en la carpeta `dist`.
+2. Para despliegues con Cloud Run usando buildpacks, el runtime invoca `npm start`, que primero ejecuta `npm run build` (script `prestart`) y luego corre `scripts/start-preview.cjs` para lanzar `vite preview` ligado a `0.0.0.0:$PORT`.
 
